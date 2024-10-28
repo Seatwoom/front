@@ -19,23 +19,20 @@ header {
   background-color: #14213d;
   border-bottom: 1px solid #ccc;
 }
-
-.logo {
+header .logo {
   font-size: 24px;
   font-weight: bold;
   color: #f0f0f0;
 }
-
-.search input {
+header .search input {
   padding: 8px;
   font-size: 16px;
   width: 200px;
   background-color: #223554;
   border: none;
-  color: #fff;
+  color: #f0f0f0;
 }
-
-.search input::placeholder {
+header .search input::placeholder {
   color: #c1c1c1;
 }
 
@@ -44,72 +41,68 @@ header {
   margin-top: 20px;
   align-items: flex-start;
 }
-
-.menu,
-.trends {
+.main-layout .menu,
+.main-layout .trends {
   flex: 1;
   padding: 20px;
-}
-
-.menu {
   background-color: #14213d;
+  border-radius: 8px;
+}
+.main-layout .menu button,
+.main-layout .trends button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: transparent;
+  color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.main-layout .menu button:hover,
+.main-layout .trends button:hover {
+  background-color: #5a73a3;
+}
+.main-layout .menu {
   margin-right: 20px;
 }
-
-.menu button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  background-color: transparent;
-  color: #f0f0f0;
-  cursor: pointer;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.menu button:hover {
-  background-color: #5a73a3;
-}
-
-.trends {
-  background-color: #14213d;
+.main-layout .trends {
   margin-left: 20px;
 }
-
-.trends button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  background-color: transparent;
-  color: #f0f0f0;
-  cursor: pointer;
+.main-layout .media-content {
+  background-color: #14213d;
+  padding: 20px;
+  flex: 2;
   border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
-
-.trends button:hover {
-  background-color: #5a73a3;
+.main-layout .media-content .photo-text,
+.main-layout .media-content .text-block {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.main-layout .media-content .photo-text img,
+.main-layout .media-content .text-block img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 
 .sections-row {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
-
-.section {
+.sections-row .section {
   flex: 1;
   margin-right: 10px;
   border: none;
   background-color: transparent;
-  color: white;
+  color: #f0f0f0;
   text-align: center;
   padding: 15px;
   cursor: pointer;
@@ -117,77 +110,35 @@ header {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
-.section:hover {
+.sections-row .section:hover {
   background-color: #5a73a3;
 }
-
-.section:last-child {
+.sections-row .section:last-child {
   margin-right: 0;
 }
 
-.media-content {
-  background-color: #14213d;
-  padding: 20px;
-  flex: 2;
-  border-radius: 8px;
-}
-
-.photo-text {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.photo-text img {
-  max-width: 100%;
-  margin: 0 auto;
-  display: block;
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
-
-.text-block {
-  margin-bottom: 20px;
-  text-align: center;
-}
 @media (max-width: 768px) {
-  header {
-    width: 100%;
-  }
-
-  .sections-row {
-    width: 100%;
-  }
-
+  header,
+  .sections-row,
   .main-layout {
-    display: flex;
     width: 100%;
   }
-
-  .menu {
-    flex: 0 0 10%;
-    padding: 10px;
-    min-width: 80px;
-  }
-
-  .media-content {
-    flex: 0 0 40%;
-    padding: 10px;
-    overflow: hidden;
-  }
-
+  .menu,
   .trends {
     flex: 0 0 10%;
     padding: 10px;
     min-width: 80px;
   }
-
   .menu button,
   .trends button {
     font-size: 10px;
     padding: 8px;
   }
-
+  .media-content {
+    flex: 0 0 40%;
+    padding: 10px;
+    overflow: hidden;
+  }
   .photo-text,
   .text-block {
     text-align: center;
@@ -195,15 +146,13 @@ header {
     margin: 10px 0;
     font-size: 14px;
   }
-
-  .photo-text img {
+  .photo-text img,
+  .text-block img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
   }
-
-  .text-block {
-    margin-bottom: 20px;
-  }
 }
+
+/*# sourceMappingURL=style.css.map */
